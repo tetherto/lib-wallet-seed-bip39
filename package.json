@@ -1,7 +1,7 @@
 {
   "name": "wallet-seed-bip39",
   "version": "0.0.1",
-  "description": "",
+  "description": "Wallet lib module for creating bip 39 seed",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -9,8 +9,8 @@
   "scripts": {
     "test": " brittle ./test/*.test.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "rbndg",
+  "license": "MIT",
   "dependencies": {
     "bip32": "^4.0.0",
     "bip39": "^3.1.0",
