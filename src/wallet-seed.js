@@ -1,4 +1,6 @@
 
+const WalletSeedError = Error
+
 class WalletSeed {
 
   constructor(config) {
