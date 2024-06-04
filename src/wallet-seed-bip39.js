@@ -1,6 +1,6 @@
 'use strict'
 const bip39 = require('bip39')
-const WalletSeed = require('../../wallet-keys/src/wallet-seed.js')
+const WalletSeed = require('./wallet-seed.js')
 const inspect = Symbol.for('nodejs.util.inspect.custom')
 
 class Bip39Seed extends WalletSeed {
