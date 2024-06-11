@@ -15,11 +15,8 @@ class Bip39Seed extends WalletSeed {
       throw new WalletSeed.Error('mnemonic is required')
     }
 
-    Object.defineProperty(this, 'mnemonic', {
-      value: config.mnemonic,
-      writable: false,
-      enumerable: true,
-    })
+    this.mnemonic = config.mnemonic
+
   }
 
   [inspect]() {
@@ -47,7 +44,7 @@ class Bip39Seed extends WalletSeed {
     return JSON.stringify({
       seed: this.seedToHex(),
       mnemonic: this.mnemonic
-    })
+    }, null, 2)
   }
 }
 
