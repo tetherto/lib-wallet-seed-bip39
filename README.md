@@ -1,6 +1,7 @@
 # lib-wallet-seed-bip39
 
 Library for generating BIP39 keys using [bip39](https://github.com/bitcoinjs/bip39) lib
+By default this generates 12 word seed phrases
 
 ### API
 
