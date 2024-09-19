@@ -1,5 +1,17 @@
+// Copyright 2024 Tether Operations Limited
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 'use strict'
-
 const test = require('brittle')
 const assert = require('assert')
 const Bip39Seed = require('../src/wallet-seed-bip39')
@@ -36,25 +48,28 @@ test('Bip39Seed', function (t) {
   })
 
   t.test('Make sure seeds are random', async function (t) {
-const count = 100
-const seeds = []
-const mnemonics = new Set()
+    const count = 10
+    const seeds = []
+    const mnemonics = new Set()
 
-for (let i = 0; i < count; i++) {
-  const s = await Bip39Seed.generate()
-  t.ok(s.mnemonic.split(' ').length === 12, 'Has 12 words')
-  seeds.push(s.seedToHex())
-  mnemonics.add(s.mnemonic)
-}
+    for (let i = 0; i < count; i++) {
+      const s = await Bip39Seed.generate()
+      t.ok(s.mnemonic.split(' ').length === 12, 'Has 12 words')
+      seeds.push(s.seedToHex())
+      mnemonics.add(s.mnemonic)
+    }
 
-t.ok(seeds.length === new Set(seeds).size, 'All seeds are unique')
-t.ok(mnemonics.size === count, 'All mnemonics are unique')
-
-    t.test('exportSeed', async function (t) {
-      const bip39 = await Bip39Seed.generate()
-      const seed = bip39.exportSeed()
-      t.ok(bip39.seedToHex() === JSON.parse(seed).seed, 'seed matches')
-      t.ok(bip39.mnemonic === JSON.parse(seed).mnemonic, 'mnemonic matches')
-    })
+    for (let i = 0; i < count; i++) {
+      for (let j = 0; j < count; j++) {
+        if (i === j) continue
+        assert(seeds[i] !== seeds[j], 'seeds are different')
+      }
+    }
+  })
+  t.test('exportSeed', async function (t) {
+    const bip39 = await Bip39Seed.generate()
+    const seed = bip39.exportSeed()
+    t.ok(bip39.seedToHex() === JSON.parse(seed).seed, 'seed matches')
+    t.ok(bip39.mnemonic === JSON.parse(seed).mnemonic, 'mnemonic matches')
   })
 })

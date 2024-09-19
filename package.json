@@ -7,14 +7,14 @@
     "test": "test"
   },
   "scripts": {
-    "test": " brittle ./test/*.test.js"
+    "test": " brittle ./test/*.test.js",
+    "lint": "standard --fix"
   },
   "author": "rbndg",
-  "license": "MIT",
+  "license": "APACHE2.0",
   "dependencies": {
     "bip32": "^4.0.0",
-    "bip39": "^3.1.0",
-    "tiny-secp256k1": "^2.2.3"
+    "bip39": "^3.1.0"
   },
   "devDependencies": {
     "brittle": "^3.5.0"
