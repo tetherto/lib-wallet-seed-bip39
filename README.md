@@ -1,9 +1,9 @@
 # 🌱 lib-wallet-seed-bip39
 
-A robust implementation of BIP39 seed generation and management for [Wallet SDK]()
+A robust implementation of BIP39 seed generation and management.
 
 ## 💼 Wallet SDK
-This library is part of the [Wallet SDK](https://github.com/tetherto/lib-wallet)
+This library is part of the [Wallet SDK](https://github.com/tetherto/lib-wallet). 
 
 
 ## 🚀 Installation
