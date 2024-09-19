@@ -1,27 +1,17 @@
-# lib-wallet-seed-bip39
-
-i# 🌱 Bip39Seed
+# 🌱 lib-wallet-seed-bip39
 
 A robust implementation of BIP39 seed generation and management for [Wallet SDK]()
 
 ## 💼 Wallet SDK
 This library is part of the [Wallet SDK](https://github.com/tetherto/lib-wallet)
 
-## 📚 Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [API](#api)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## 🚀 Installation
 
 Install the package using npm:
 
 ```bash
-npm install bip39-seed
+npm install lib-wallet-seed-bip39
 ```
 
 ## 🔧 Usage
@@ -29,7 +19,7 @@ npm install bip39-seed
 Here's a quick example of how to use Bip39Seed:
 
 ```javascript
-const Bip39Seed = require('bip39-seed');
+const Bip39Seed = require('lib-wallet-seed-bip39');
 
 async function example() {
   // Generate a new seed with a random mnemonic
@@ -79,6 +69,4 @@ To run the tests for this package, use the following command:
 ```bash
 npm run test
 ```
-
-This will execute the test suite and provide you with the results.
 
