@@ -36,21 +36,19 @@ test('Bip39Seed', function (t) {
   })
 
   t.test('Make sure seeds are random', async function (t) {
-    const seeds = []
-    const count = 10 // 10 seeds
+const count = 100
+const seeds = []
+const mnemonics = new Set()
 
-    for (let i = 0; i < count; i++) {
-      const s = await Bip39Seed.generate()
-      t.ok(s.mnemonic.split(' ').length === 12, 'Has 12 word phrase')
-      seeds.push(s.seedToHex())
-    }
+for (let i = 0; i < count; i++) {
+  const s = await Bip39Seed.generate()
+  t.ok(s.mnemonic.split(' ').length === 12, 'Has 12 words')
+  seeds.push(s.seedToHex())
+  mnemonics.add(s.mnemonic)
+}
 
-    for (let i = 0; i < count; i++) {
-      for (let j = 0; j < count; j++) {
-        if (i === j) continue
-        assert(seeds[i] !== seeds[j], 'seeds are different')
-      }
-    }
+t.ok(seeds.length === new Set(seeds).size, 'All seeds are unique')
+t.ok(mnemonics.size === count, 'All mnemonics are unique')
 
     t.test('exportSeed', async function (t) {
       const bip39 = await Bip39Seed.generate()
