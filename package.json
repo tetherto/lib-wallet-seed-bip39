@@ -17,6 +17,7 @@
     "bip39": "^3.1.0"
   },
   "devDependencies": {
-    "brittle": "^3.5.0"
+    "brittle": "^3.5.0",
+    "standard": "^17.1.2"
   }
 }
