@@ -1,3 +1,9 @@
+<p align="center" width="100">
+<a href="https://github.com/tetherto/lib-wallet">
+<img src="https://github.com/tetherto/lib-wallet/blob/main/docs/logo.svg" width="200"/>
+</a>
+</p>
+
 # 🌱 lib-wallet-seed-bip39
 
 A robust implementation of BIP39 seed generation and management. This is lib is a wrapper around [bip32](https://www.npmjs.com/package/bip32) and [bip39](https://www.npmjs.com/package/bip39)
